@@ -5,8 +5,7 @@ using namespace std;
 int main()
 {
   int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-  int index, mynum, size;
-  bool valid = false;
+  int index = -1, mynum, size;
 
   cout << "Enter your value: ";
   cin >> mynum;
@@ -18,9 +17,8 @@ int main()
     if (arr[i] == mynum)
     {
       index = i;
-      valid = true;
     }
   }
-  valid ? cout << index : cout << "invalid";
+  (index != -1) ? cout << index : cout << "Invalid" << endl;
   return 0;
 }
