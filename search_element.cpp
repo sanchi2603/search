@@ -1,31 +1,26 @@
-#include<iostream>
+#include <iostream>
+
 using namespace std;
-int searcharray(int array[], int size , int mynum);
-int main(){
-    int number[]={1,2,3,4,5,6,7,8,9,10};
-    int index;
-    int size = sizeof(number)/sizeof(number[0]);
-    int mynum;
 
-    cout<<"enter your element for search";
-    cin >> mynum;
+int main()
+{
+  int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+  int index, mynum, size;
+  bool valid = false;
 
-    index = searcharray( number,size,mynum);
-    if (index!=-1){
-        cout<< index;
+  cout << "Enter your value: ";
+  cin >> mynum;
+
+  size = sizeof(arr) / sizeof(arr[0]);
+
+  for (int i = 0; i < size; i++)
+  {
+    if (arr[i] == mynum)
+    {
+      index = i;
+      valid = true;
     }
-    else {
-        cout << "no";
-    }
-
-
-}
-
-int searcharray(int array[], int size , int mynum){
-    for (int i = 0 ; i < size ; i++ ){
-        if (array[i] ==mynum){
-            return i;
-        }
-    }
-    return -1;
+  }
+  valid ? cout << index : cout << "invalid";
+  return 0;
 }
